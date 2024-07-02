@@ -1,5 +1,2 @@
-import './scss/index.scss'
-async function ask(){
-    await Promise.resolve()
-}
-console.log("!!!")
+/* eslint-disable linebreak-style */
+import './scss/index.scss';
