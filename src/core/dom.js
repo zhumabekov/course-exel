@@ -53,11 +53,31 @@ class Dom{
   findAll(selector) {
     return this.$el.querySelectorAll(selector)
   }
+  find(selector) {
+    return $(this.$el.querySelector(selector))
+  }
+  addClass(className) {
+    this.$el.classList.add(className)
+  }
+  removeClass(className) {
+    this.$el.classList.remove(className)
+  }
+  id(parse) {
+    if (parse) {
+      const parsed = this.id().split(':')
+      return {
+        row: +parsed[0],
+        col: +parsed[1]
+      }
+    }
+    return this.data.id
+  }
 }
 
 export function $(selector){
   return new Dom(selector)
 }
+
 $.create = (tagName, classes = '') => {
     const el = document.createElement(tagName)
     if (classes){
